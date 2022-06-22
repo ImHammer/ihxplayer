@@ -2,7 +2,7 @@
   "name": "ihxplayer",
   "productName": "ihxplayer",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A program for viewing videos, still in development.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -17,6 +17,27 @@
     "email": "hamemrdevofc@gmail.com"
   },
   "license": "MIT",
+  "build": {
+      "appId": "com.hamemrdev.ihxplayer",
+      "productName": "IHxPlayer",
+      "linux": {
+          "target": ["deb"],
+          "icon": "path/to/icon",
+          "category": "Video",
+          "packageCategory": "utils",
+          "mimeTypes": "video/mp4; video/ogg; video/webm;application/x-extension-mp4; application/ogg;",
+          "synopsis": "The best video player created for the desktop"
+      },
+      "fileAssociations": [
+          {
+              "ext": [ "mp4", "mkv", "ogg" ],
+              "name": "Video",
+              "role": "",
+              "mimeType": "video/mp4;video/ogg;video/webm;application/x-extension-mp4;application/ogg;",
+              "perMachine": true
+          }
+      ]
+  },
   "config": {
     "forge": {
       "packagerConfig": {},
@@ -35,10 +56,6 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
           "config": {}
         }
       ]

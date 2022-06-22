@@ -1,0 +1,220 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.body-hide-mouse {
+    cursor: none;
+}
+
+.player-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000;
+}
+
+.video-src {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+}
+
+.controls-container {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hidden-controls-content { visibility: hidden; }
+
+.controls-content {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.14747897449995628) 50%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Middle buttons */
+.action-buttons {
+    width: 210px;
+    height: 100px;
+
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -105px;
+}
+
+.action-buttons button {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+
+    outline: none;
+
+    cursor: pointer;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+
+    transition: scale 0.2s;
+}
+
+.action-buttons button:hover {
+    scale: 1.05;
+}
+
+/* ALL Player slider (range duration) styles */
+.range {
+    width: 100%;
+    height: 35px;
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 50px;
+
+    font-size: 12px;
+    color: white;
+}
+
+.range .background {
+    width: 98%;
+    height: 40%;
+    background-color: #444;
+
+    transition: height 0.4s;
+    transition-timing-function: ease-in-out;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.range .background:hover {
+    height: 90%;
+}
+
+.range .background .progress {
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+}
+
+/* Video title styles */
+.title-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+/* Another buttons action */
+.another-action-buttons {
+    display: flex;
+
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.another-action-buttons button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    cursor: pointer;
+
+    transition: scale 0.2s;
+}
+
+.another-action-buttons button:hover {
+    scale: 1.05;
+}
+
+/* Vide playback rate */
+.video-speed-rate {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+}
+
+.video-speed-rate button {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    font-weight: bolder;
+    transition: scale 0.2s;
+}
+
+.video-speed-rate button:hover {
+    scale: 1.05;
+}
+
+.line-show-times {
+    width: 256px;
+    height: 144px;
+
+    /* display: flex;
+    flex-direction: column; */
+
+    background-color: black;
+
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+
+    visibility: hidden;
+}
+
+.line-show-times img {
+    width: 100%;
+    height: 100%;
+}
+
+.line-show-times strong {
+    width: 100%;
+    display: block;
+
+    /* background-color: red; */
+
+    text-align: center;
+}

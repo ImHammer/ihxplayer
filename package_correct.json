@@ -1,0 +1,86 @@
+{
+  "name": "ihxplayer",
+  "productName": "IHxPlayer",
+  "version": "1.0.0",
+  "description": "A program for viewing videos, still in development.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "ImHammer",
+    "email": "hamemrdevofc@gmail.com"
+  },
+  "license": "MIT",
+  "build": {
+      "appId": "com.hamemrdev.ihxplayer",
+      "productName": "IHxPlayer",
+      "linux": {
+          "target": ["deb"],
+          "icon": "path/to/icon",
+          "category": "Video",
+          "packageCategory": "utils",
+          "mimeTypes": "",
+          "synopsis": "The best video player created for the desktop"
+      },
+      "fileAssociations": [
+          {
+              "ext": [ "mp4", "mkv", "ogg" ],
+              "name": "Video",
+              "role": "",
+              "mimeType": "video/mp4;video/ogg;video/webm;application/x-extension-mp4;application/ogg;",
+              "perMachine": true
+          }
+      ],
+      "protocols": [
+          {
+              "name": "IHxPlayer Video",
+              "schemes": [ "ihxplayer", "ihxplayers" ]
+          }
+      ]
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "ihxplayer"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "19.0.4",
+    "eslint": "^8.18.0"
+  }
+}
